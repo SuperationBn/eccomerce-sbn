@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const SliderInfo = ({ titulo, imgUrl }) => {
   return (
@@ -8,7 +9,7 @@ const SliderInfo = ({ titulo, imgUrl }) => {
         <p className='text-[1rem] mt-8 text-slate-50/80'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consequatur quia suscipit minima vero perspiciatis dolore adipisci animi repudiandae. Magni.</p>
       </div>
       <div className='hidden md:block boxImgHero'>
-        <img src={imgUrl} alt="img" loading='lazy' />
+        <Image layout='responsive' width={100} height={140} src={imgUrl} alt="img" loading='lazy' />
       </div>
     </div>
   )

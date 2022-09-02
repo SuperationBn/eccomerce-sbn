@@ -2,6 +2,7 @@ import { useDataGlobal } from "./context/TagApiProvider"
 import { useState } from "react"
 import { BsXLg } from "react-icons/bs";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
+import Image from "next/image";
 
 const CarritoSection = () => {
 
@@ -22,13 +23,13 @@ const CarritoSection = () => {
       <div className="relative top-28 w-[100%] p-[0.3rem]">
         {carritoProd.length === 0 ?
           (
-            <p> no hay productos</p>
+            <p className="text-center text-slate-50 text-2xl font-semibold">no products yet, you must add them</p>
           ) : (
             carritoProd.map(datos => {
               return (
-                <div className='relative flex flex-col sm:flex-row-reverse justify-end items-center mb-5 p-4 gap-2 shadow-lg' key={datos.id}>
-                  <div>
-                    <h3 className="text-sm font-semibold text-slate-50/80 mb-2">{datos.name}</h3>
+                <div className='relative flex flex-col sm:flex-row-reverse justify-end items-center mb-10 p-4 gap-2 shadow-lg' key={datos.id}>
+                  <div className="w-[100%] sm:w-[auto]">
+                    <h3 className="text-lg sm:text-xs font-semibold text-slate-50/80 mb-2">{datos.name}</h3>
                     <h4 className="text-sm text-slate-50/60 font-semibold mb-2">color: <span className="text-slate-50/90">{datos.colour}</span></h4>
                     <div className="flex items-center gap-4 mb-2">
                       <select
@@ -46,10 +47,10 @@ const CarritoSection = () => {
                         <option className="text-slate-50/90 font-semibold" value="9">9</option>
                       </select>
                     </div>
-                    <span className="text-xs font-semibold text-slate-50/80">{datos.price.current.text}</span>
+                    <span className="text-[1rem] sm:text-xs font-semibold text-slate-50/80">{datos.price.current.text}</span>
                   </div>
                   <div className="w-16">
-                    <img src={'http://' + datos.imageUrl} alt="" />
+                    <Image className="object-cover" layout='responsive' width={60} height={60} src={'http://' + datos.imageUrl} alt="" />
                   </div>
                   <div onClick={() => removeElementCarrito(datos.id)} className="absolute right-4 bottom-4 p-1 bg-red-500/70 rounded-sm hover:bg-red-500/90 hover:shadow-md cursor-pointer">
                     <span className="text-sm text-slate-50/90 font-semibold">Eliminar</span>

@@ -30,7 +30,7 @@ const CardProductosTag = ({ repuestas }) => {
     <div
       className="dosPrimerosClas grid grid-cols-1 place-content-center place-items-center gap-2 p-2 mb-4 rounded-lg shadow-lg hover:shadow-xl">
       <div className="w-[100%] sm:w-[250px] md:w-[100%] cursor-pointer overflow-hidden hover:shadow-xl">
-        <Image onClick={allEvents} layout="responsive" width={300} height={300} src={'http://' + imageUrl} alt='' />
+        <Image className="object-cover" onClick={allEvents} layout="responsive" width={300} height={300} src={'http://' + imageUrl} alt='' />
       </div>
       <div className="relative col-span-2 h-[100%] w-[100%]">
         <h3 className="text-[1.2rem] font-bold">{name}</h3>

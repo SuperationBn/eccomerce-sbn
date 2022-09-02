@@ -84,7 +84,7 @@ a {
 /* ------------------------ */
 
 .myfilter {
-  filter: brightness(0.85) grayscale(0.5);
+  filter: brightness(0.85) grayscale(0.2);
 }
 
 /* .popupImgProductoShow {
